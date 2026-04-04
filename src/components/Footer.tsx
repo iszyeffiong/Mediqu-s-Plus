@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const quickLinks = ["Home", "Our Services", "About", "Facilities", "Plans & Pricing", "Contact"];
 const serviceLinks = ["Antenatal Care", "Cardiology", "Gynaecology", "Dermatology", "Urology", "ENT"];
@@ -18,10 +19,7 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-baseline gap-1">
-              <span className="font-display italic text-2xl font-semibold">Mediqués</span>
-              <span className="font-body text-sm font-semibold tracking-wider text-accent uppercase">Plus</span>
-            </div>
+            <img src={logo} alt="Mediqués Plus" className="h-10 brightness-0 invert" />
             <p className="font-display italic text-sm text-primary-foreground/70">
               Here for you — for the care you deserve.
             </p>
