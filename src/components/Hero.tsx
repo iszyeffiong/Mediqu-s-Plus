@@ -43,8 +43,8 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/10 rounded-[24px] -z-10 translate-x-4 translate-y-4" />
               <img
-                src="https://static.wixstatic.com/media/bb4cb2_119f020f6d494f1eb7a57704469d13a8~mv2.jpg/v1/fill/w_980,h_499,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bb4cb2_119f020f6d494f1eb7a57704469d13a8~mv2.jpg"
-                alt="Mediqués Plus hospital building — modern healthcare facility in Uyo"
+                src={heroTeam}
+                alt="Mediqués Plus healthcare team — dedicated medical professionals in Uyo"
                 className="rounded-[20px] border-2 border-accent/40 shadow-xl w-full max-w-lg object-cover"
               />
             </div>

@@ -1,20 +1,23 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import facilityWard from "@/assets/facility-ward.png";
+import facilityTheatre from "@/assets/facility-theatre.png";
+import staffNurse from "@/assets/staff-nurse.png";
 
 const facilities = [
   {
     name: "Wards & Long-Term Rooms",
-    description: "Comfortable, patient-centred living areas meeting the highest standards of cleanliness and sterility. A worrisome hospital stay becomes a reassuring experience in our hands.",
-    image: "https://static.wixstatic.com/media/bb4cb2_96ba57b6d20247c8b705126ba43b54f6~mv2.jpg/v1/fill/w_301,h_255,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_3620.jpg",
+    description: "Our living areas are comfortable and patient-centered. A trip to the hospital can be worrisome, but with the care experience, you will see what great hands you are in. Our facilities meet the highest standards of cleanliness and sterility.",
+    image: facilityWard,
   },
   {
     name: "Operating Theatres",
-    description: "Our Operating Rooms foster innovation, strive for excellence, nurture respect and ensure accountability — delivering world-class surgical care to our patients.",
-    image: "https://static.wixstatic.com/media/bb4cb2_13b4845ee91a423e92601b868b82f722~mv2.jpg/v1/crop/x_0,y_0,w_3557,h_3024/fill/w_301,h_255,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1040.jpg",
+    description: "Our Operating Rooms offer a warm environment that fosters innovation, strives for excellence, nurtures respect for others, and ensures accountability in delivering world-class care to our patients.",
+    image: facilityTheatre,
   },
   {
-    name: "Exceptional Care Environment",
-    description: "From the waiting area to discharge, patients and visitors have an amazing experience and consistently recommend our medical services throughout Akwa Ibom State.",
-    image: "https://static.wixstatic.com/media/bb4cb2_6bbeb51169904ce18dd321c9286acf90~mv2.jpg/v1/crop/x_0,y_483,w_2400,h_2033/fill/w_301,h_255,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_0190.jpg",
+    name: "Exceptional Care",
+    description: "Patients and visitors have an amazing experience beginning from our Waiting Areas, and recommend our medical services to all. Our outstanding and well equipped facilities have allowed us to excel at what we do.",
+    image: staffNurse,
   },
 ];
 
