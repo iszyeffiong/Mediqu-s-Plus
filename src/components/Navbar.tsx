@@ -34,9 +34,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
-        <button onClick={() => scrollTo("hero")} className="flex items-baseline gap-1">
-          <span className="font-display italic text-2xl font-semibold text-primary">Mediqués</span>
-          <span className="font-body text-sm font-semibold tracking-wider text-accent uppercase">Plus</span>
+        <button onClick={() => scrollTo("hero")} className="flex items-center">
+          <img src={logo} alt="Mediqués Plus" className="h-10" />
         </button>
 
         {/* Desktop links */}
