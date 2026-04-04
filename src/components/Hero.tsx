@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import heroTeam from "@/assets/hero-team.png";
 
 const Hero = () => {
   const ref = useScrollAnimation<HTMLElement>();
