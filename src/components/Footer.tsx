@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const quickLinks = ["Home", "Our Services", "About", "Facilities", "Plans & Pricing", "Contact"];
 const serviceLinks = ["Antenatal Care", "Cardiology", "Gynaecology", "Dermatology", "Urology", "ENT"];
