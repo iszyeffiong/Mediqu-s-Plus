@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const navLinks = ["Home", "Our Services", "About", "Facilities", "Plans & Pricing", "Contact"];
 const sectionIds: Record<string, string> = {
