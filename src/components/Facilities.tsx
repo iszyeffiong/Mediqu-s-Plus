@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 import facilityWard from "@/assets/facility-ward.png";
 import facilityTheatre from "@/assets/facility-theatre.png";
 import staffNurse from "@/assets/staff-nurse.png";
@@ -58,6 +59,12 @@ const Facilities = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="section-fade-up text-center mt-12">
+          <Link to="/facilities" className="btn-shimmer inline-block font-body text-sm font-medium bg-primary text-primary-foreground px-10 py-4 rounded-xl hover:bg-primary-light transition-all shadow-lg hover:shadow-xl">
+            Explore Facilities
+          </Link>
         </div>
       </div>
     </section>

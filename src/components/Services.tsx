@@ -3,7 +3,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const services = [
   { name: "Antenatal Care", tagline: "From Conception Till Birth", description: "A bespoke package for every woman's journey to bring life. We guide you through every step with expert support and planned pain management options.", icon: "🤰" },
   { name: "Pain Management in Labour", tagline: "Just Like The Hebrew Women", description: "Several safe options of pain management for a seamless and truly unforgettable birthing experience.", icon: "💊" },
-  { name: "Free Family Planning", tagline: "For Your Health and Peace of Mind", description: "All forms of contraception are free at Mediqués Plus — subdermal implants, IUDs, pills, and injections — with full counselling.", icon: "🌿" },
+  { name: "Free Family Planning", tagline: "For Your Health and Peace of Mind", description: "All forms of contraception are free at Mediqués Plus  subdermal implants, IUDs, pills, and injections  with full counselling.", icon: "🌿" },
   { name: "Cardiology", tagline: "For a Healthy and Happy Heart", description: "In-house Cardiologists provide up-to-date treatment and monitoring for hypertension and cardiovascular disorders, plus heart screening plans.", icon: "❤️" },
   { name: "Dermatology", tagline: "Get The Glow You Desire", description: "Treatment of acute and chronic skin disease, stretch marks, acne, skin cancers, urticaria and allergies in a hospital setting.", icon: "✨" },
   { name: "Gynaecology", tagline: "A Woman's World", description: "Headed by a seasoned Gynaecologist, addressing subfertility, fibroids, ovarian tumors, urogynaecology and gynaecological cancers.", icon: "🌸" },
@@ -15,7 +15,7 @@ const services = [
   { name: "Sexual Health Clinic", tagline: "Confidential. Compassionate.", description: "Wide range of confidential services including STI testing and treatment, contraception, pregnancy testing, PEP and specialist young people's services.", icon: "🔒" },
   { name: "ENT", tagline: "Say Aaaah...", description: "Full range of adult Ear, Nose & Throat services. General and specialist multidisciplinary clinics backed by latest technology.", icon: "👂" },
   { name: "Work / School / Travel Exams", tagline: "For Your Health and Safety", description: "Fitness certifications, school medicals, travel vaccinations and occupational health plans by our specialist team.", icon: "✈️" },
-  { name: "Physiotherapy", tagline: "Support When You Need It", description: "Manage chronic pain, improve mobility, recover from injury, strokes or paralysis — all without relying solely on medication.", icon: "🏃" },
+  { name: "Physiotherapy", tagline: "Support When You Need It", description: "Manage chronic pain, improve mobility, recover from injury, strokes or paralysis  all without relying solely on medication.", icon: "🏃" },
   { name: "Paediatrics & Adolescent Health", tagline: "A Happier, Healthier You", description: "Friendly and experienced staff ensuring your children and teenagers always feel comfortable, cared for and well-informed.", icon: "👶" },
 ];
 

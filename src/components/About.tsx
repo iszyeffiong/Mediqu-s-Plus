@@ -1,8 +1,9 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 const values = [
   { name: "Quality", description: "Setting and surpassing higher standards to build a smarter, faster, more efficient organisation that delivers excellent care in the right place, at the right time." },
-  { name: "Compassion", description: "A culture of caring unmistakeable in every interaction — treating individuals, families and colleagues with empathy, honesty and openness." },
+  { name: "Compassion", description: "A culture of caring unmistakeable in every interaction  treating individuals, families and colleagues with empathy, honesty and openness." },
   { name: "Respect", description: "Treating each individual with caring consideration and valuing the diverse perspectives each person brings." },
   { name: "Collaboration", description: "Working together across disciplines to share knowledge, skills, and create a unified integrated approach to care." },
   { name: "Foresight", description: "Anticipating tomorrow's challenges and developing new, innovative ways to inspire healthier communities." },
@@ -32,13 +33,18 @@ const About = () => {
               <p className="font-display italic text-2xl md:text-3xl text-foreground leading-snug">
                 "To enhance lives and preserve health by enabling access to a comprehensive, fully integrated network of the highest quality and most affordable care, delivered with kindness, integrity and respect."
               </p>
-              <cite className="font-body text-sm text-muted-foreground mt-4 block not-italic">— Our Mission</cite>
+              <cite className="font-body text-sm text-muted-foreground mt-4 block not-italic"> Our Mission</cite>
             </blockquote>
             <div>
               <h3 className="font-display text-lg font-semibold text-foreground mb-2">Our Vision</h3>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">
                 To lead the evolution of healthcare to enable every resident of Akwa Ibom State to enjoy a better, healthier life.
               </p>
+            </div>
+            <div className="pt-4">
+              <Link to="/about" className="btn-shimmer inline-block font-body text-sm font-medium bg-primary text-primary-foreground px-8 py-3.5 rounded-lg hover:bg-primary-light transition-colors">
+                Learn More About Us
+              </Link>
             </div>
           </div>
 

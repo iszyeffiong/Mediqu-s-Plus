@@ -1,20 +1,25 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { useNavigate, useLocation } from "react-router-dom";
 
-const navLinks = ["Home", "Our Services", "About", "Facilities", "Plans & Pricing", "Contact"];
-const sectionIds: Record<string, string> = {
-  "Home": "hero",
-  "Our Services": "services",
-  "About": "about",
-  "Facilities": "facilities",
-  "Plans & Pricing": "pricing",
-  "Contact": "contact",
+const navLinks = ["Home", "Our Services", "About", "Doctors", "Facilities", "Gallery", "Plans & Pricing", "Contact"];
+const sectionLinks: Record<string, { path: string, id: string }> = {
+  "Home": { path: "/", id: "hero" },
+  "Our Services": { path: "/", id: "services" },
+  "About": { path: "/about", id: "about" },
+  "Doctors": { path: "/doctors", id: "doctors" },
+  "Facilities": { path: "/facilities", id: "facilities" },
+  "Gallery": { path: "/gallery", id: "gallery" },
+  "Plans & Pricing": { path: "/", id: "pricing" },
+  "Contact": { path: "/", id: "contact" },
 };
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 60);
@@ -22,9 +27,28 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  const scrollTo = (id: string) => {
+  const handleLinkClick = (name: string) => {
     setMobileOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const linkObj = sectionLinks[name];
+    
+    // If the target is the same page
+    if (location.pathname === linkObj.path) {
+      if (linkObj.path === '/doctors' || linkObj.path === '/about' || linkObj.path === '/facilities' || linkObj.path === '/gallery') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        document.getElementById(linkObj.id)?.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Different page
+      navigate(linkObj.path);
+      if (linkObj.path === '/') {
+        setTimeout(() => {
+          document.getElementById(linkObj.id)?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -34,7 +58,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
-        <button onClick={() => scrollTo("hero")} className="flex items-center">
+        <button onClick={() => handleLinkClick("Home")} className="flex items-center">
           <img src={logo} alt="Mediqués Plus" className="h-10" />
         </button>
 
@@ -43,14 +67,14 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <button
               key={link}
-              onClick={() => scrollTo(sectionIds[link])}
+              onClick={() => handleLinkClick(link)}
               className="font-body text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-accent after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left"
             >
               {link}
             </button>
           ))}
           <button
-            onClick={() => scrollTo("contact")}
+            onClick={() => handleLinkClick("Contact")}
             className="btn-shimmer font-body text-sm font-medium bg-primary text-primary-foreground px-5 py-2.5 rounded-lg hover:bg-primary-light transition-colors"
           >
             Book Appointment
@@ -73,7 +97,7 @@ const Navbar = () => {
           {navLinks.map((link, i) => (
             <button
               key={link}
-              onClick={() => scrollTo(sectionIds[link])}
+              onClick={() => handleLinkClick(link)}
               className="block w-full text-left font-body text-base py-3 px-2 text-foreground/80 hover:text-primary transition-colors"
               style={{ animationDelay: `${i * 0.05}s` }}
             >
@@ -81,7 +105,7 @@ const Navbar = () => {
             </button>
           ))}
           <button
-            onClick={() => scrollTo("contact")}
+            onClick={() => handleLinkClick("Contact")}
             className="btn-shimmer w-full font-body text-sm font-medium bg-primary text-primary-foreground px-5 py-3 rounded-lg mt-2"
           >
             Book Appointment

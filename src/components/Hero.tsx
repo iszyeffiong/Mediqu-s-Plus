@@ -18,7 +18,7 @@ const Hero = () => {
               Here for You
             </p>
             <p className="font-display italic text-lg text-muted-foreground">
-              ...for the care you deserve
+              ... for the care you deserve
             </p>
             <p className="font-body text-base text-muted-foreground leading-relaxed max-w-md">
               Providing convenient, affordable, world-class healthcare to the people of Uyo, Akwa Ibom State since 2017.
@@ -45,7 +45,7 @@ const Hero = () => {
               <div className="absolute -inset-4 bg-primary/10 rounded-[24px] -z-10 translate-x-4 translate-y-4" />
               <img
                 src={heroTeam}
-                alt="Mediqués Plus healthcare team — dedicated medical professionals in Uyo"
+                alt="Mediqués Plus healthcare team  dedicated medical professionals in Uyo"
                 className="rounded-[20px] border-2 border-accent/40 shadow-xl w-full max-w-lg object-cover"
               />
             </div>

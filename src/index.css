@@ -86,7 +86,8 @@
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .section-fade-up.visible {
+  .section-fade-up.visible,
+  .visible .section-fade-up {
     opacity: 1;
     transform: translateY(0);
   }

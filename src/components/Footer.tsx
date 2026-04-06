@@ -1,7 +1,8 @@
-import { Facebook, Twitter, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Linkedin, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { useNavigate } from "react-router-dom";
 
-const quickLinks = ["Home", "Our Services", "About", "Facilities", "Plans & Pricing", "Contact"];
+const quickLinks = ["Home", "Our Services", "About", "Facilities", "Gallery", "Plans & Pricing", "Contact"];
 const serviceLinks = ["Antenatal Care", "Cardiology", "Gynaecology", "Dermatology", "Urology", "ENT"];
 const sectionIds: Record<string, string> = {
   "Home": "hero", "Our Services": "services", "About": "about",
@@ -9,8 +10,26 @@ const sectionIds: Record<string, string> = {
 };
 
 const Footer = () => {
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const navigate = useNavigate();
+  
+  const handleLinkClick = (l: string) => {
+    const pages: Record<string, string> = {
+      "About": "/about",
+      "Facilities": "/facilities",
+      "Gallery": "/gallery",
+      "Doctors": "/doctors",
+      "Home": "/"
+    };
+
+    if (pages[l]) {
+      navigate(pages[l]);
+      window.scrollTo(0, 0);
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(sectionIds[l])?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
   };
 
   return (
@@ -19,16 +38,23 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <img src={logo} alt="Mediqués Plus" className="h-10 brightness-0 invert" />
+            <img src={logo} alt="Mediqués Plus" className="h-10" />
             <p className="font-display italic text-sm text-primary-foreground/70">
-              Here for you — for the care you deserve.
+              Here for you for the care you deserve.
             </p>
             <div className="flex gap-3 pt-2">
-              {[Facebook, Twitter, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" aria-label="Social media" className="w-9 h-9 rounded-full border border-primary-foreground/20 flex items-center justify-center hover:border-accent hover:text-accent transition-colors">
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
+              <a href="https://www.facebook.com/share/1LKsXkJG3F/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-full border border-primary-foreground/20 flex items-center justify-center hover:border-accent hover:text-accent transition-colors">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a href="https://wa.me/447307092681" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="w-9 h-9 rounded-full border border-primary-foreground/20 flex items-center justify-center hover:border-accent hover:text-accent transition-colors">
+                <MessageCircle className="w-4 h-4" />
+              </a>
+              <a href="#" aria-label="Twitter" className="w-9 h-9 rounded-full border border-primary-foreground/20 flex items-center justify-center hover:border-accent hover:text-accent transition-colors">
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a href="#" aria-label="LinkedIn" className="w-9 h-9 rounded-full border border-primary-foreground/20 flex items-center justify-center hover:border-accent hover:text-accent transition-colors">
+                <Linkedin className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
@@ -38,7 +64,7 @@ const Footer = () => {
             <ul className="space-y-2.5">
               {quickLinks.map((l) => (
                 <li key={l}>
-                  <button onClick={() => scrollTo(sectionIds[l])} className="font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors">
+                  <button onClick={() => handleLinkClick(l)} className="font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors">
                     {l}
                   </button>
                 </li>
@@ -52,7 +78,7 @@ const Footer = () => {
             <ul className="space-y-2.5">
               {serviceLinks.map((l) => (
                 <li key={l}>
-                  <button onClick={() => scrollTo("services")} className="font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors">
+                  <button onClick={() => handleLinkClick("Our Services")} className="font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors">
                     {l}
                   </button>
                 </li>
