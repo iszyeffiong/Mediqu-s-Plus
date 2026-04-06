@@ -9,6 +9,7 @@ import DoctorsPage from "./pages/DoctorsPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import FacilitiesPage from "./pages/FacilitiesPage.tsx";
 import GalleryPage from "./pages/GalleryPage.tsx";
+import FloatingChatbot from "./components/FloatingChatbot";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <FloatingChatbot />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
