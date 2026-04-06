@@ -61,9 +61,12 @@ const Facilities = () => {
           ))}
         </div>
 
-        <div className="section-fade-up text-center mt-12">
+        <div className="section-fade-up flex flex-wrap justify-center gap-4 mt-12">
           <Link to="/facilities" className="btn-shimmer inline-block font-body text-sm font-medium bg-primary text-primary-foreground px-10 py-4 rounded-xl hover:bg-primary-light transition-all shadow-lg hover:shadow-xl">
             Explore Facilities
+          </Link>
+          <Link to="/shop" className="inline-block font-body text-sm font-medium border-2 border-primary text-primary px-10 py-4 rounded-xl hover:bg-primary hover:text-white transition-all shadow-lg hover:shadow-xl">
+            Shop Medical Equipment
           </Link>
         </div>
       </div>

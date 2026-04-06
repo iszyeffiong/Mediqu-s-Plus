@@ -132,25 +132,29 @@ const GalleryPage = () => {
         {/* Lightbox */}
         {selectedImage && (
           <div 
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 lg:p-12 animate-in fade-in duration-300"
+            className="fixed inset-0 z-[100] bg-black/95 flex flex-col items-center justify-center p-4 md:p-8 animate-in fade-in duration-300"
             onClick={() => setSelectedImage(null)}
           >
             <button 
-              className="absolute top-8 right-8 text-white hover:text-primary transition-colors z-[110]"
+              className="absolute top-6 right-6 md:top-10 md:right-10 text-white hover:text-primary transition-colors z-[110] bg-white/10 p-2 rounded-full"
               onClick={() => setSelectedImage(null)}
             >
-              <X size={32} />
+              <X size={24} className="md:w-8 md:h-8" />
             </button>
-            <div className="relative max-w-6xl w-full max-h-full flex flex-col items-center">
-              <img 
-                src={selectedImage.src} 
-                alt={selectedImage.title}
-                className="max-h-[80vh] w-auto object-contain rounded-xl shadow-2xl mb-8 animate-in zoom-in-95 duration-500"
-                onClick={(e) => e.stopPropagation()}
-              />
-              <div className="text-center text-white space-y-2 animate-in slide-in-from-bottom-4 duration-500 delay-200">
-                <p className="text-primary text-sm font-bold uppercase tracking-[0.2em]">{selectedImage.category}</p>
-                <h2 className="font-display text-3xl lg:text-4xl font-bold">{selectedImage.title}</h2>
+            <div 
+              className="relative max-w-5xl w-full max-h-full flex flex-col items-center overflow-y-auto no-scrollbar py-12"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="w-full flex justify-center mb-6 md:mb-8">
+                <img 
+                  src={selectedImage.src} 
+                  alt={selectedImage.title}
+                  className="max-h-[65vh] md:max-h-[75vh] w-auto object-contain rounded-xl shadow-2xl animate-in zoom-in-95 duration-500"
+                />
+              </div>
+              <div className="text-center text-white space-y-2 px-4 animate-in slide-in-from-bottom-4 duration-500 delay-200">
+                <p className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">{selectedImage.category}</p>
+                <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">{selectedImage.title}</h2>
               </div>
             </div>
           </div>

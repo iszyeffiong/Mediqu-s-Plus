@@ -33,7 +33,7 @@ const Navbar = () => {
     
     // If the target is the same page
     if (location.pathname === linkObj.path) {
-      if (linkObj.path === '/doctors' || linkObj.path === '/about' || linkObj.path === '/facilities' || linkObj.path === '/gallery') {
+      if (['/doctors', '/about', '/facilities', '/gallery', '/shop'].includes(linkObj.path)) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         document.getElementById(linkObj.id)?.scrollIntoView({ behavior: "smooth" });
